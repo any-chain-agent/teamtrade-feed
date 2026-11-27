@@ -1,0 +1,758 @@
+{
+  "generated_at": "2026-11-27T14:20:07.760681Z",
+  "seed": false,
+  "wallet": {
+    "address": "FE7DrfLDUV6868MFK2YEDVMNtj4X7G92bUFsbdS7frnX",
+    "pool_sol": 0.5,
+    "pool_note": "0.5 SOL permanent ops reserve, NEVER traded \u2014 not part of any desk stack"
+  },
+  "desks": [
+    {
+      "id": "sol",
+      "token": "SOL",
+      "mint": "So11111111111111111111111111111111111111112",
+      "ref": 72.61272,
+      "sell": 76.2434,
+      "buy": 68.9821,
+      "band_pct": 5,
+      "stack_token": 1.335476598,
+      "stack_usdc": 41.465902,
+      "baseline": 1.868587494,
+      "earned_token_equiv": 0.033996367,
+      "guard_drawdown_from_peak_pct": -0.455,
+      "guard_status": "watching",
+      "halted": false,
+      "live_price": 73.1183,
+      "price_at": "2026-11-27T14:16:43.713Z",
+      "price_source": "jupiter",
+      "change_pct_vs_ref": 0.696,
+      "reference_set_at": "2026-11-23T07:59:47-07:00"
+    },
+    {
+      "id": "happy",
+      "token": "$HAPPY",
+      "mint": "68fn2tLABKmS7VA9Eaz3n6RfoXM3iBWUACckT9dwpump",
+      "ref": 0.00022917,
+      "sell": 0.0002521,
+      "buy": 0.0002063,
+      "band_pct": 10,
+      "stack_token": 236266.511744,
+      "stack_usdc": 26.764171,
+      "baseline": 334188.089988,
+      "earned_token_equiv": 9040.978706,
+      "guard_drawdown_from_peak_pct": -4.129,
+      "guard_status": "watching",
+      "halted": false,
+      "live_price": 0.0002502,
+      "price_at": "2026-11-27T14:18:45.031Z",
+      "price_source": "jupiter",
+      "change_pct_vs_ref": 9.185,
+      "reference_set_at": null
+    },
+    {
+      "id": "wif",
+      "token": "WIF",
+      "mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+      "ref": 0.13345134,
+      "sell": 0.1467965,
+      "buy": 0.1201062,
+      "band_pct": 10,
+      "stack_token": 77.472054,
+      "stack_usdc": 15.927667,
+      "baseline": 206.592144,
+      "earned_token_equiv": -15.98991,
+      "guard_drawdown_from_peak_pct": -9.897,
+      "guard_status": "WARNING",
+      "halted": false,
+      "live_price": 0.1407906,
+      "price_at": "2026-11-27T14:16:14.082Z",
+      "price_source": "jupiter",
+      "change_pct_vs_ref": 5.5,
+      "reference_set_at": "2026-11-25T00:51:03.911Z"
+    },
+    {
+      "id": "ray",
+      "token": "RAY",
+      "mint": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+      "ref": 1.371364,
+      "sell": 1.5085004,
+      "buy": 1.2342276,
+      "band_pct": 10,
+      "stack_token": 7.568795,
+      "stack_usdc": 15.947102,
+      "baseline": 20.183452,
+      "earned_token_equiv": -0.864331,
+      "guard_drawdown_from_peak_pct": -6.849,
+      "guard_status": "WARNING",
+      "halted": false,
+      "live_price": 1.3571625,
+      "price_at": "2026-11-27T14:17:09.133Z",
+      "price_source": "jupiter",
+      "change_pct_vs_ref": -1.036,
+      "reference_set_at": "2026-11-25T00:51:26.338Z"
+    },
+    {
+      "id": "pengu",
+      "token": "PENGU",
+      "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+      "ref": 0.00420025,
+      "sell": 0.0046203,
+      "buy": 0.0037802,
+      "band_pct": 10,
+      "stack_token": 2971.93,
+      "stack_usdc": 12.482845,
+      "baseline": 5943.86,
+      "earned_token_equiv": -214.125181,
+      "guard_drawdown_from_peak_pct": -5.824,
+      "guard_status": "watching",
+      "halted": false,
+      "live_price": 0.0045264,
+      "price_at": "2026-11-27T14:18:07.678Z",
+      "price_source": "jupiter",
+      "change_pct_vs_ref": 7.764,
+      "reference_set_at": "2026-11-25T00:51:47.314Z"
+    }
+  ],
+  "decisions": [
+    {
+      "at": "2026-11-27T14:16:14.082Z",
+      "desk": "wif",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price +5.50% from reference, inside the \u00b110% band (buy <= $0.1201062 / sell >= $0.1467965)"
+    },
+    {
+      "at": "2026-11-27T14:16:43.713Z",
+      "desk": "sol",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price +0.70% from reference, inside the \u00b15% band (buy <= $68.9821 / sell >= $76.2434)"
+    },
+    {
+      "at": "2026-11-27T14:17:09.133Z",
+      "desk": "ray",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price -1.04% from reference, inside the \u00b110% band (buy <= $1.2342276 / sell >= $1.5085004)"
+    },
+    {
+      "at": "2026-11-27T14:18:07.678Z",
+      "desk": "pengu",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price +7.76% from reference, inside the \u00b110% band (buy <= $0.0037802 / sell >= $0.0046203)"
+    },
+    {
+      "at": "2026-11-27T14:18:45.031Z",
+      "desk": "happy",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price +9.19% from reference, inside the \u00b110% band (buy <= $0.0002063 / sell >= $0.0002521)"
+    }
+  ],
+  "trades": [
+    {
+      "desk": "sol",
+      "side": "opening_split_sell",
+      "amount_token": 0.452547667,
+      "amount_usdc": 34.617351,
+      "price": 76.5,
+      "tx": "2a3f8RwL6xzjEU3ZWMFNmqh9QXV4mmSeT41MdKP17yYkh2aLzqubd3bC2aeTjLgXNjKTDSm7xiU5bCrnVBPA7ysM",
+      "solscan": "https://solscan.io/tx/2a3f8RwL6xzjEU3ZWMFNmqh9QXV4mmSeT41MdKP17yYkh2aLzqubd3bC2aeTjLgXNjKTDSm7xiU5bCrnVBPA7ysM",
+      "at": "2026-11-23T15:25:40.740Z",
+      "earned_token_equiv_after": null
+    },
+    {
+      "desk": "sol",
+      "side": "buy",
+      "amount_token": 0.238929636,
+      "amount_usdc": 17.312434,
+      "price": 72.4651,
+      "tx": "66w73dXeLN5AyT6czi69wSWQRaKAXgS9S6VaYvX5hmPSYemk32yHYXeeVa49S8oroYPbV9RvYbQjGhYEZeDMsofe",
+      "solscan": "https://solscan.io/tx/66w73dXeLN5AyT6czi69wSWQRaKAXgS9S6VaYvX5hmPSYemk32yHYXeeVa49S8oroYPbV9RvYbQjGhYEZeDMsofe",
+      "at": "2026-11-23T19:43:36.676Z",
+      "earned_token_equiv_after": 0.025185088
+    },
+    {
+      "desk": "happy",
+      "side": "opening_split_sell",
+      "amount_token": 120018.640526,
+      "amount_usdc": 30.5154,
+      "price": 0.0002547,
+      "tx": "RqzPNJLmTDEakyJVKBoAV4QHqQopM5w81QCuhH94ZfVobRmihjuRnLn1KKvhQaR47pXEWsmhuV5AWT1pptuHEwU",
+      "solscan": "https://solscan.io/tx/RqzPNJLmTDEakyJVKBoAV4QHqQopM5w81QCuhH94ZfVobRmihjuRnLn1KKvhQaR47pXEWsmhuV5AWT1pptuHEwU",
+      "at": "2026-11-24T04:04:26.166Z",
+      "earned_token_equiv_after": 0
+    },
+    {
+      "desk": "sol",
+      "side": "buy",
+      "amount_token": 0.12577,
+      "amount_usdc": 8.656216,
+      "price": 68.8359,
+      "tx": "2MuzH3XbvPe6kVMRz2vzbxnAUYZD9p3sCNe9oKN44nEZTKdVREb1g4QFMJrgw8Ya9Cs3LWDZzNc9dCswg2D2RRac",
+      "solscan": "https://solscan.io/tx/2MuzH3XbvPe6kVMRz2vzbxnAUYZD9p3sCNe9oKN44nEZTKdVREb1g4QFMJrgw8Ya9Cs3LWDZzNc9dCswg2D2RRac",
+      "at": "2026-11-24T15:32:56.786755Z",
+      "earned_token_equiv_after": 0.03779946,
+      "note": "Reconciled post-hoc: script sent tx then died on 'socket hang up' before recording; tx verified FINALIZED on-chain (slot 473394188, err null). Actual on-chain: +0.12563 SOL received (quote 0.12577), 8.656216 USDC spent, fee 0.000105 SOL. Stack ledger follows script convention (quote expectedOut); wallet SOL now 2.279874108."
+    },
+    {
+      "desk": "happy",
+      "side": "buy",
+      "amount_token": 116247.871218,
+      "amount_usdc": 27.270196,
+      "price": 0.0002292,
+      "tx": "EHNWMzfUPXibnfgQhBVYeycJhFz41Wmusb1QzHgY5W5vpUXvc3MoWpWs8yC81xL5CVC4gFaiwAp7A29V8J5eF3p",
+      "solscan": "https://solscan.io/tx/EHNWMzfUPXibnfgQhBVYeycJhFz41Wmusb1QzHgY5W5vpUXvc3MoWpWs8yC81xL5CVC4gFaiwAp7A29V8J5eF3p",
+      "at": "2026-11-25T09:43:55.742Z",
+      "earned_token_equiv_after": 21073.909822
+    },
+    {
+      "desk": "wif",
+      "side": "sell",
+      "amount_token": 25.824018,
+      "amount_usdc": 3.446497,
+      "price": 0.1334513,
+      "tx": "5wYVgiGqNobq6NK9GdDtGfuooueKkNaWY2UmX1ofLM8pvyseTQZoutnjzo6c7Doa8dWPm55LbCrxaZzouP4QGuxL",
+      "solscan": "https://solscan.io/tx/5wYVgiGqNobq6NK9GdDtGfuooueKkNaWY2UmX1ofLM8pvyseTQZoutnjzo6c7Doa8dWPm55LbCrxaZzouP4QGuxL",
+      "at": "2026-11-26T08:37:52.000Z",
+      "earned_token_equiv_after": -9.76822
+    },
+    {
+      "desk": "sol",
+      "side": "sell",
+      "amount_token": 0.445158866,
+      "amount_usdc": 32.30366,
+      "price": 72.6127,
+      "tx": "5aVMchc8rmtHwYwAF6X3LgYo2v7rwq3a4UtpdMWKtCQ8xSYcM8qbMkQXzJyrbThLUyPnXAs4u7io4VDZDanFAMRc",
+      "solscan": "https://solscan.io/tx/5aVMchc8rmtHwYwAF6X3LgYo2v7rwq3a4UtpdMWKtCQ8xSYcM8qbMkQXzJyrbThLUyPnXAs4u7io4VDZDanFAMRc",
+      "at": "2026-11-27T02:26:45.307Z",
+      "earned_token_equiv_after": 0.037944726
+    },
+    {
+      "desk": "ray",
+      "side": "sell",
+      "amount_token": 2.522931,
+      "amount_usdc": 3.460618,
+      "price": 1.371364,
+      "tx": "32YHfMUGfpKLxiJn94EUbhGs3pjpcjnbdabCwR52cjpHuxmSuNu1NSzWYsX8icB8G3h2htGK9Wy8maxwhMGFBcdh",
+      "solscan": "https://solscan.io/tx/32YHfMUGfpKLxiJn94EUbhGs3pjpcjnbdabCwR52cjpHuxmSuNu1NSzWYsX8icB8G3h2htGK9Wy8maxwhMGFBcdh",
+      "at": "2026-11-27T09:37:17.938Z",
+      "earned_token_equiv_after": -0.986014
+    }
+  ],
+  "funding_moves": [
+    {
+      "at": "2026-11-26T19:22:49Z",
+      "event": "funding_rotation_in",
+      "move_id": 1,
+      "source": "happy",
+      "dest": "solana",
+      "amount_sol": 0.0071,
+      "amount_usd": 0.506024668,
+      "tx": null,
+      "note": "PUSH FUNDING move #1 executed in desk state; 0.5 SOL pool untouched"
+    },
+    {
+      "at": "2026-11-26T19:22:49Z",
+      "event": "funding_rotation_out",
+      "move_id": 1,
+      "source": "happy",
+      "dest": "solana",
+      "amount_sol": 0.0071,
+      "amount_usd": 0.506024668,
+      "tx": null,
+      "note": "PUSH FUNDING move #1 executed in desk state; 0.5 SOL pool untouched"
+    }
+  ],
+  "assigned": [
+    {
+      "id": "trump",
+      "name": "TRUMP",
+      "mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+      "status": "awaiting_funding",
+      "ref": 0.876563932497214,
+      "sell": 0.9642203257469356,
+      "buy": 0.7889075392474926,
+      "stack_token": 0,
+      "stack_usdc": 0,
+      "live": false,
+      "seed": true,
+      "seed_as_of": "2026-11-26",
+      "seed_note": "last-known values from the Lovable prompt seed; live state is the portal server"
+    },
+    {
+      "id": "jup",
+      "name": "JUP",
+      "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+      "status": "awaiting_funding",
+      "ref": 0.2331316379425564,
+      "sell": 0.25644480173681206,
+      "buy": 0.20981847414830077,
+      "stack_token": 0,
+      "stack_usdc": 0,
+      "live": false,
+      "seed": true,
+      "seed_as_of": "2026-11-26",
+      "seed_note": "last-known values from the Lovable prompt seed; live state is the portal server"
+    },
+    {
+      "id": "crypto",
+      "name": "Cryptocurrency Coin",
+      "mint": "4ikwYoNvoGEwtMbziUyYBTz1zRM6nmxspsfw9G7Bpump",
+      "status": "awaiting_funding",
+      "ref": 0.00218538,
+      "sell": null,
+      "buy": null,
+      "stack_token": 0,
+      "stack_usdc": 0,
+      "live": false,
+      "seed": true,
+      "seed_as_of": "2026-11-26",
+      "seed_note": "last-known values from the Lovable prompt seed; live state is the portal server"
+    },
+    {
+      "id": "shareware",
+      "name": "SHAREWARE",
+      "mint": "C3LfnHv7ivuwCwPBtNpW922nWZ73qb95KnzzFBBvpump",
+      "status": "no_pool",
+      "ref": null,
+      "sell": null,
+      "buy": null,
+      "stack_token": 0,
+      "stack_usdc": 0,
+      "live": false,
+      "seed": true,
+      "seed_as_of": "2026-11-26",
+      "seed_note": "last-known values from the Lovable prompt seed; live state is the portal server"
+    },
+    {
+      "id": "wbtc",
+      "name": "WBTC",
+      "mint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+      "status": "awaiting_funding",
+      "ref": 60827.2506,
+      "sell": null,
+      "buy": null,
+      "stack_token": 0,
+      "stack_usdc": 0,
+      "live": false,
+      "seed": true,
+      "seed_as_of": "2026-11-26",
+      "seed_note": "last-known values from the Lovable prompt seed; live state is the portal server"
+    }
+  ],
+  "whale": {
+    "sol": {
+      "status": "no_data",
+      "top10_pct": null,
+      "largest_pct": null,
+      "top20_pct": null,
+      "holders_tracked": 0,
+      "as_of": null,
+      "runs": 46
+    },
+    "happy": {
+      "status": "live",
+      "top10_pct": 32.2457,
+      "largest_pct": 7.8041,
+      "top20_pct": 49.8458,
+      "holders_tracked": 20,
+      "as_of": "2026-11-27T13:20:39.213Z",
+      "runs": 55
+    },
+    "wif": {
+      "status": "live",
+      "top10_pct": 45.3326,
+      "largest_pct": 17.6092,
+      "top20_pct": 56.103,
+      "holders_tracked": 20,
+      "as_of": "2026-11-27T13:35:04.612Z",
+      "runs": 46
+    },
+    "ray": {
+      "status": "live",
+      "top10_pct": 77.773,
+      "largest_pct": 24.9715,
+      "top20_pct": 83.7765,
+      "holders_tracked": 20,
+      "as_of": "2026-11-27T13:44:50.231Z",
+      "runs": 46
+    },
+    "pengu": {
+      "status": "live",
+      "top10_pct": 44.8725,
+      "largest_pct": 9.1345,
+      "top20_pct": 55.1144,
+      "holders_tracked": 20,
+      "as_of": "2026-11-27T13:54:10.916Z",
+      "runs": 47
+    }
+  },
+  "bundle": {
+    "sol": {
+      "verdict": "NOT_APPLICABLE",
+      "top10_pct": null,
+      "largest_pct": null,
+      "reason": "SOL holders are measured through the WSOL proxy \u2014 top holders are wrapping contracts and bridges, not a token holder base",
+      "checked_at": "2026-11-27T13:24:18.429Z",
+      "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
+    },
+    "happy": {
+      "verdict": "CAUTION",
+      "top10_pct": 32.2457,
+      "largest_pct": 7.8041,
+      "reason": "top-10 holds 32.2457% of supply",
+      "checked_at": "2026-11-27T13:20:39.218Z",
+      "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
+    },
+    "wif": {
+      "verdict": "CAUTION",
+      "top10_pct": 45.3326,
+      "largest_pct": 17.6092,
+      "reason": "top-10 holds 45.3326% of supply",
+      "checked_at": "2026-11-27T13:35:04.615Z",
+      "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
+    },
+    "ray": {
+      "verdict": "FLAGGED",
+      "top10_pct": 77.773,
+      "largest_pct": 24.9715,
+      "reason": "top-10 holds 77.7730% of supply",
+      "checked_at": "2026-11-27T13:44:50.234Z",
+      "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
+    },
+    "pengu": {
+      "verdict": "CAUTION",
+      "top10_pct": 44.8725,
+      "largest_pct": 9.1345,
+      "reason": "top-10 holds 44.8725% of supply",
+      "checked_at": "2026-11-27T13:54:10.919Z",
+      "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
+    }
+  },
+  "cross_pair": {
+    "near_miss": [],
+    "last_near_miss_signals": {
+      "HAPPY:buy": "2026-11-25T08:07:04.612Z",
+      "SOL:buy": "2026-11-25T14:37:03.931Z",
+      "SOL:sell": "2026-11-26T20:22:04.789Z",
+      "RAY:sell": "2026-11-26T08:42:05.348Z"
+    },
+    "turnover_ranking": [
+      {
+        "kind": "prospective",
+        "id": "WIF>RAY",
+        "source": "WIF",
+        "dest": "RAY",
+        "amount_usdc": 7.9638,
+        "dest_dist_to_buy_pp": 5,
+        "score_pct_per_day": 13.62,
+        "net_gain_usd": 0.7731,
+        "net_return_pct": 9.71,
+        "hold_hours_rw": 17.1
+      },
+      {
+        "kind": "prospective",
+        "id": "WIF>SOL",
+        "source": "WIF",
+        "dest": "SOL",
+        "amount_usdc": 7.9638,
+        "dest_dist_to_buy_pp": 5.7,
+        "score_pct_per_day": 7.38,
+        "net_gain_usd": 0.3749,
+        "net_return_pct": 4.71,
+        "hold_hours_rw": 15.3
+      },
+      {
+        "kind": "prospective",
+        "id": "RAY>SOL",
+        "source": "RAY",
+        "dest": "SOL",
+        "amount_usdc": 7.9736,
+        "dest_dist_to_buy_pp": 5.7,
+        "score_pct_per_day": 7.38,
+        "net_gain_usd": 0.3753,
+        "net_return_pct": 4.71,
+        "hold_hours_rw": 15.3
+      },
+      {
+        "kind": "prospective",
+        "id": "RAY>WIF",
+        "source": "RAY",
+        "dest": "WIF",
+        "amount_usdc": 7.9638,
+        "dest_dist_to_buy_pp": 14.22,
+        "score_pct_per_day": 2.93,
+        "net_gain_usd": 0.7731,
+        "net_return_pct": 9.71,
+        "hold_hours_rw": 79.6
+      },
+      {
+        "kind": "open_loan",
+        "id": "loan-1",
+        "source": "WIF",
+        "dest": "HAPPY",
+        "amount_usdc": 6.2406,
+        "dest_dist_to_buy_pp": null,
+        "score_pct_per_day": 2.69,
+        "net_gain_usd": 0.2234,
+        "net_return_pct": 3.58,
+        "hold_hours_rw": 31.9
+      },
+      {
+        "kind": "open_loan",
+        "id": "loan-2",
+        "source": "RAY",
+        "dest": "HAPPY",
+        "amount_usdc": 6.2432,
+        "dest_dist_to_buy_pp": null,
+        "score_pct_per_day": 2.69,
+        "net_gain_usd": 0.2235,
+        "net_return_pct": 3.58,
+        "hold_hours_rw": 31.9
+      },
+      {
+        "kind": "open_loan",
+        "id": "loan-3",
+        "source": "PENGU",
+        "dest": "HAPPY",
+        "amount_usdc": 6.2414,
+        "dest_dist_to_buy_pp": null,
+        "score_pct_per_day": 2.69,
+        "net_gain_usd": 0.2235,
+        "net_return_pct": 3.58,
+        "hold_hours_rw": 31.9
+      },
+      {
+        "kind": "prospective",
+        "id": "WIF>HAPPY",
+        "source": "WIF",
+        "dest": "HAPPY",
+        "amount_usdc": 7.9638,
+        "dest_dist_to_buy_pp": 16.03,
+        "score_pct_per_day": 1.03,
+        "net_gain_usd": 0.7731,
+        "net_return_pct": 9.71,
+        "hold_hours_rw": 226.7
+      },
+      {
+        "kind": "prospective",
+        "id": "RAY>HAPPY",
+        "source": "RAY",
+        "dest": "HAPPY",
+        "amount_usdc": 7.9736,
+        "dest_dist_to_buy_pp": 16.03,
+        "score_pct_per_day": 1.03,
+        "net_gain_usd": 0.774,
+        "net_return_pct": 9.71,
+        "hold_hours_rw": 226.7
+      },
+      {
+        "kind": "prospective",
+        "id": "WIF>PENGU",
+        "source": "WIF",
+        "dest": "PENGU",
+        "amount_usdc": 6.2414,
+        "dest_dist_to_buy_pp": 15.52,
+        "score_pct_per_day": 0.91,
+        "net_gain_usd": 0.6025,
+        "net_return_pct": 9.65,
+        "hold_hours_rw": 254.8
+      },
+      {
+        "kind": "prospective",
+        "id": "RAY>PENGU",
+        "source": "RAY",
+        "dest": "PENGU",
+        "amount_usdc": 6.2414,
+        "dest_dist_to_buy_pp": 15.52,
+        "score_pct_per_day": 0.91,
+        "net_gain_usd": 0.6025,
+        "net_return_pct": 9.65,
+        "hold_hours_rw": 254.8
+      }
+    ],
+    "turnover_at": "2026-11-27T14:17:03.782Z",
+    "open_paper_loans": [
+      {
+        "id": "loan-1",
+        "source": "WIF",
+        "dest": "HAPPY",
+        "amount_usdc": 6.2406,
+        "dest_buy_price": 0.0002292,
+        "dest_sell_trigger": 0.0002521,
+        "at": "2026-11-25T09:47:02.056Z",
+        "mark_to_market_usd": 0.3752,
+        "score_pct_per_day": 2.69,
+        "net_gain_usd": 0.2234
+      },
+      {
+        "id": "loan-2",
+        "source": "RAY",
+        "dest": "HAPPY",
+        "amount_usdc": 6.2432,
+        "dest_buy_price": 0.0002292,
+        "dest_sell_trigger": 0.0002521,
+        "at": "2026-11-25T09:47:02.061Z",
+        "mark_to_market_usd": 0.3754,
+        "score_pct_per_day": 2.69,
+        "net_gain_usd": 0.2235
+      },
+      {
+        "id": "loan-3",
+        "source": "PENGU",
+        "dest": "HAPPY",
+        "amount_usdc": 6.2414,
+        "dest_buy_price": 0.0002292,
+        "dest_sell_trigger": 0.0002521,
+        "at": "2026-11-25T09:57:06.725Z",
+        "mark_to_market_usd": 0.3753,
+        "score_pct_per_day": 2.69,
+        "net_gain_usd": 0.2235
+      }
+    ],
+    "arb_scans": {
+      "total": 249,
+      "signals": 0,
+      "last_scan": "2026-11-27T14:18:04.757Z",
+      "best_edge_pct": -1.0247
+    },
+    "runs": 986,
+    "note": "PAPER ONLY \u2014 rotation is paper until Alex approves a real move naming source, destination and amount"
+  },
+  "shadow": [
+    {
+      "id": "SOL-A",
+      "desk": "sol",
+      "variant": "control \u2014 live settings",
+      "token": 1.335476598,
+      "usdc": 41.08638734654594,
+      "reference": 72.9036,
+      "trailing_armed": false,
+      "trades": 1,
+      "fees_token": 0.000322579433,
+      "earned_pct": -0.417775803147091,
+      "last_processed_price": 73.1183,
+      "last_processed_at": "2026-11-27T14:16:43.703Z",
+      "seeded_at": "2026-11-24T19:00:31.552Z"
+    },
+    {
+      "id": "SOL-B",
+      "desk": "sol",
+      "variant": "5% bands + trailing sell ARMED",
+      "token": 0.17826460692297366,
+      "usdc": 117.86135696306674,
+      "reference": 70.4565,
+      "trailing_armed": true,
+      "trades": 8,
+      "fees_token": 0.0016011854285385132,
+      "earned_pct": -6.04411658670648,
+      "last_processed_price": 73.1183,
+      "last_processed_at": "2026-11-27T14:16:43.703Z",
+      "seeded_at": "2026-11-24T19:00:31.552Z"
+    },
+    {
+      "id": "HAPPY-A",
+      "desk": "happy",
+      "variant": "control \u2014 live settings",
+      "token": 120018.640526,
+      "usdc": 54.540392,
+      "reference": 0.0002324,
+      "trailing_armed": false,
+      "trades": 0,
+      "fees_token": 0,
+      "earned_pct": -4.7070769737514695,
+      "last_processed_price": 0.0002502,
+      "last_processed_at": "2026-11-27T14:18:45.030Z",
+      "seeded_at": "2026-11-24T19:00:31.552Z"
+    },
+    {
+      "id": "HAPPY-B",
+      "desk": "happy",
+      "variant": "5% bands",
+      "token": 90013.9803945,
+      "usdc": 61.835903685571246,
+      "reference": 0.0002449,
+      "trailing_armed": false,
+      "trades": 1,
+      "fees_token": 215.00233006575,
+      "earned_pct": -4.945570294309019,
+      "last_processed_price": 0.0002502,
+      "last_processed_at": "2026-11-27T14:18:45.030Z",
+      "seeded_at": "2026-11-24T19:00:31.552Z"
+    }
+  ],
+  "backtest": {
+    "generated_at": "2026-11-26T06:43:31.333Z",
+    "runs": 200,
+    "sol": {
+      "p": 0.145,
+      "runs": 200,
+      "live_trades": 2,
+      "window_start": "2026-11-23T15:25:35.895Z",
+      "window_end": "2026-11-26T06:41:43.490Z"
+    },
+    "happy": {
+      "p": 0.195,
+      "runs": 200,
+      "live_trades": 1,
+      "window_start": "2026-11-24T04:06:47.037Z",
+      "window_end": "2026-11-26T06:38:41.215Z"
+    },
+    "note": "Shuffle robustness only \u2014 neither p is significant, no edge proven. Audit flag (2026-11-26): the shuffle file's HAPPY live_earned (16,745.44) overstates the live desk; only p/runs are carried here, never live_earned."
+  },
+  "odds": {
+    "generated_at": "2026-11-26T13:01:33.849003+00:00",
+    "desks": {
+      "sol": {
+        "check_rows": 855,
+        "first": "2026-11-23T15:00:58.209Z",
+        "last": "2026-11-26T12:57:16.727Z",
+        "exec_band_trades": 2
+      },
+      "happy": {
+        "check_rows": 667,
+        "first": "2026-11-24T03:57:54.013Z",
+        "last": "2026-11-26T12:58:56.763Z",
+        "exec_band_trades": 1
+      },
+      "wif": {
+        "check_rows": 427,
+        "first": "2026-11-24T23:58:45.238Z",
+        "last": "2026-11-26T13:01:27.000Z",
+        "exec_band_trades": 1
+      },
+      "ray": {
+        "check_rows": 423,
+        "first": "2026-11-24T23:58:48.301Z",
+        "last": "2026-11-26T12:57:28.756Z",
+        "exec_band_trades": 0
+      },
+      "pengu": {
+        "check_rows": 430,
+        "first": "2026-11-24T23:58:51.405Z",
+        "last": "2026-11-26T12:58:36.507Z",
+        "exec_band_trades": 0
+      }
+    },
+    "note": "Calibration dataset only (2026-11-26): 4 independent trigger episodes ever \u2014 too few to calibrate; portal odds formula stays the fallback."
+  },
+  "nightly": {
+    "status": "unavailable",
+    "note": "No nightly-review record file exists on disk. The review is delivered in chat by cron trading-nightly-review (daily 21:04 MST); last run 2026-11-26 ~21:04 MST. The job should write a record file for this feed."
+  },
+  "market": {
+    "status": "unavailable",
+    "note": "Stock-market watch (cron trading-stock-market-watch) has no data file; its reads are logged to the daily memory file only (~/memory/2026-11-26.md, first run 2026-11-26)."
+  },
+  "top_picks": {
+    "status": "unavailable",
+    "note": "THE SYSTEM'S TOP PICKS live in the portal server only; this writer does not read the portal database."
+  },
+  "notes": [
+    "Contract sections: desks, assigned, whale, bundle, cross_pair, shadow, backtest, trades, decisions, nightly.",
+    "Extension sections (not in the contract's printed schema): wallet, funding_moves, odds, market, top_picks.",
+    "assigned entries are SEED-labelled (live=false) \u2014 no live local source; live assigned state is the portal server.",
+    "Bundle verdicts are computed here from the whale-state files with the portal's own thresholds; they are concentration only (Stage 1), not cluster detection.",
+    "Prices come from the bots' own Jupiter quotes in trades.log; a price older than 15 minutes at generation time is reported unavailable, never as live.",
+    "Known data caveat (audit 2026-11-26, unfixed): the HAPPY desk ledger overstates the on-chain stack by 44.764142 HAPPY (the 2026-11-25 buy recorded Jupiter's quote expectedOut instead of the actual received 116203.107076). Figures here are the ledger figures, as the bots hold them.",
+    "reference_set_at is stale on re-referenced desks (SOL shows 2026-11-23 although the reference reset on 2026-11-26 after the sell; same for RAY) \u2014 carried verbatim, do not trust it for when the reference last changed.",
+    "PENGU triggers in state.json read 0.0046203 / 0.0037802; the Lovable prompt seed carries 0.00462027 / 0.00378022 (last-digit rounding). State.json wins here."
+  ]
+}

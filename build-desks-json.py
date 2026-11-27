@@ -354,6 +354,14 @@ def build(now):
         reserve = dict(RESERVE_FALLBACK)
         reserve["note"] = ("position-reserve.json unreadable — fallback "
                            "figures from the 2026-11-27 earmark")
+    # Running balance: remaining_sol is maintained by
+    # execute-assigned-funding.mjs on every reserve draw (absent until
+    # the first draw, it equals reserve_sol); draws[] is the draw history.
+    # Both ride the feed so the Treasury record stays complete.
+    if reserve.get("remaining_sol") is None:
+        reserve["remaining_sol"] = reserve.get("reserve_sol")
+    if reserve.get("draws") is None:
+        reserve["draws"] = []
     out["reserve"] = reserve
 
     # ---- assigned (seed only — no live local source) ----------------

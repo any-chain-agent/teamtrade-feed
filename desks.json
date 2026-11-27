@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-11-27T15:16:39.932230Z",
+  "generated_at": "2026-11-27T15:20:24.834358Z",
   "seed": false,
   "wallet": {
     "address": "FE7DrfLDUV6868MFK2YEDVMNtj4X7G92bUFsbdS7frnX",
-    "pool_sol": 0.5,
-    "pool_note": "0.5 SOL permanent ops reserve, NEVER traded \u2014 not part of any desk stack"
+    "pool_sol": 0,
+    "released_pool_sol": 0.5,
+    "pool_note": "0.5 SOL ops pool RELEASED for trading 2026-11-27 by Alex's word \u2014 now assignable funding (new positions + top-ups); $15 / 0.208505 SOL activation reserve earmark intact, remainder 0.291495 SOL assignable; no on-chain movement"
   },
   "desks": [
     {
@@ -18,14 +19,14 @@
       "stack_token": 1.335476598,
       "stack_usdc": 41.465902,
       "baseline": 1.868587494,
-      "earned_token_equiv": 0.049873992,
-      "guard_drawdown_from_peak_pct": -0.329,
+      "earned_token_equiv": 0.049004913,
+      "guard_drawdown_from_peak_pct": -0.374,
       "guard_status": "watching",
       "halted": false,
-      "live_price": 71.1269,
-      "price_at": "2026-11-27T15:11:42.478Z",
+      "live_price": 71.2331,
+      "price_at": "2026-11-27T15:16:41.914Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": -2.046,
+      "change_pct_vs_ref": -1.9,
       "reference_set_at": "2026-11-27T02:26:45.307Z",
       "reference_set_at_source": "derived from latest TRADE_EXECUTED (sell, tx 5aVMchc8rmtHwYwAF6X3LgYo2v7rwq3a4UtpdMWKtCQ8xSYcM8qbMkQXzJyrbThLUyPnXAs4u7io4VDZDanFAMRc)"
     },
@@ -40,14 +41,14 @@
       "stack_token": 236266.511744,
       "stack_usdc": 26.764171,
       "baseline": 334188.089988,
-      "earned_token_equiv": 11494.10795,
-      "guard_drawdown_from_peak_pct": -3.443,
+      "earned_token_equiv": 11686.788535,
+      "guard_drawdown_from_peak_pct": -3.39,
       "guard_status": "watching",
       "halted": false,
-      "live_price": 0.0002446,
-      "price_at": "2026-11-27T15:13:45.796Z",
+      "live_price": 0.0002442,
+      "price_at": "2026-11-27T15:18:39.305Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": 6.737,
+      "change_pct_vs_ref": 6.55,
       "reference_set_at": "2026-11-25T09:43:55.742Z",
       "reference_set_at_source": "derived from latest TRADE_EXECUTED (buy, tx EHNWMzfUPXibnfgQhBVYeycJhFz41Wmusb1QzHgY5W5vpUXvc3MoWpWs8yC81xL5CVC4gFaiwAp7A29V8J5eF3p)"
     },
@@ -84,14 +85,14 @@
       "stack_token": 7.568795,
       "stack_usdc": 15.947102,
       "baseline": 20.183452,
-      "earned_token_equiv": -0.463167,
-      "guard_drawdown_from_peak_pct": -4.915,
+      "earned_token_equiv": -0.468382,
+      "guard_drawdown_from_peak_pct": -4.94,
       "guard_status": "watching",
       "halted": false,
-      "live_price": 1.3123577,
-      "price_at": "2026-11-27T15:12:09.605Z",
+      "live_price": 1.3129212,
+      "price_at": "2026-11-27T15:17:09.150Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": -4.303,
+      "change_pct_vs_ref": -4.262,
       "reference_set_at": "2026-11-27T09:37:17.938Z",
       "reference_set_at_source": "derived from latest TRADE_EXECUTED (sell, tx 32YHfMUGfpKLxiJn94EUbhGs3pjpcjnbdabCwR52cjpHuxmSuNu1NSzWYsX8icB8G3h2htGK9Wy8maxwhMGFBcdh)"
     },
@@ -106,48 +107,48 @@
       "stack_token": 2971.93,
       "stack_usdc": 12.482845,
       "baseline": 5943.86,
-      "earned_token_equiv": -121.769456,
-      "guard_drawdown_from_peak_pct": -4.306,
+      "earned_token_equiv": -119.252609,
+      "guard_drawdown_from_peak_pct": -4.264,
       "guard_status": "watching",
       "halted": false,
-      "live_price": 0.0043797,
-      "price_at": "2026-11-27T15:13:14.392Z",
+      "live_price": 0.0043758,
+      "price_at": "2026-11-27T15:18:12.152Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": 4.272,
+      "change_pct_vs_ref": 4.18,
       "reference_set_at": "2026-11-25T00:51:47.314Z",
       "reference_set_at_source": "state.json (desk has no trades yet)"
     }
   ],
   "decisions": [
     {
-      "at": "2026-11-27T15:11:42.478Z",
-      "desk": "sol",
-      "decision": "hold",
-      "reason": "HOLD \u2014 price -2.05% from reference, inside the \u00b15% band (buy <= $68.9821 / sell >= $76.2434)"
-    },
-    {
-      "at": "2026-11-27T15:12:09.605Z",
-      "desk": "ray",
-      "decision": "hold",
-      "reason": "HOLD \u2014 price -4.30% from reference, inside the \u00b110% band (buy <= $1.2342276 / sell >= $1.5085004)"
-    },
-    {
-      "at": "2026-11-27T15:13:14.392Z",
-      "desk": "pengu",
-      "decision": "hold",
-      "reason": "HOLD \u2014 price +4.27% from reference, inside the \u00b110% band (buy <= $0.0037802 / sell >= $0.0046203)"
-    },
-    {
-      "at": "2026-11-27T15:13:45.796Z",
-      "desk": "happy",
-      "decision": "hold",
-      "reason": "HOLD \u2014 price +6.74% from reference, inside the \u00b110% band (buy <= $0.0002063 / sell >= $0.0002521)"
-    },
-    {
       "at": "2026-11-27T15:16:10.647Z",
       "desk": "wif",
       "decision": "hold",
       "reason": "HOLD \u2014 price +2.23% from reference, inside the \u00b110% band (buy <= $0.1201062 / sell >= $0.1467965)"
+    },
+    {
+      "at": "2026-11-27T15:16:41.914Z",
+      "desk": "sol",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price -1.90% from reference, inside the \u00b15% band (buy <= $68.9821 / sell >= $76.2434)"
+    },
+    {
+      "at": "2026-11-27T15:17:09.150Z",
+      "desk": "ray",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price -4.26% from reference, inside the \u00b110% band (buy <= $1.2342276 / sell >= $1.5085004)"
+    },
+    {
+      "at": "2026-11-27T15:18:12.152Z",
+      "desk": "pengu",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price +4.18% from reference, inside the \u00b110% band (buy <= $0.0037802 / sell >= $0.0046203)"
+    },
+    {
+      "at": "2026-11-27T15:18:39.305Z",
+      "desk": "happy",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price +6.55% from reference, inside the \u00b110% band (buy <= $0.0002063 / sell >= $0.0002521)"
     }
   ],
   "trades": [
@@ -279,6 +280,22 @@
     "note": "Ledger earmark only \u2014 no on-chain transfer, SOL stays in FE7, no desk stacks changed, no bot state files changed.",
     "remaining_sol": 0.208505,
     "draws": []
+  },
+  "float": {
+    "allocations": [],
+    "balance_usd": 0,
+    "cap_status": "PROPOSED \u2014 Alex rules on the number",
+    "cap_usd": 10,
+    "created": "2026-11-27T15:30:00Z",
+    "funding_rule": "PROPOSED: hold back 25% of each desk sell's USDC proceeds into the float until it reaches the cap, refilling the same way after each allocation.",
+    "funding_rule_status": "PROPOSED \u2014 the 25% holdback needs a bot-side change once Alex rules on the number; until then the float fills only by his explicit funding choice",
+    "note": "USDC float for the request flow (Job 3, Alex 2026-11-27). Starts at $0 \u2014 the wallet is fully deployed (free USDC approx $0, verified 2026-11-27). Do NOT seed by converting pool SOL \u2014 that is a swap and needs Alex's explicit word.",
+    "queued_requests": [],
+    "source": "ledger allocation inside the app \u2014 all desks share one FE7 USDC account; not a separate on-chain account"
+  },
+  "positions": {
+    "closes": [],
+    "note": "Position lifecycle record (Job 2, spec section 2). The close flow writes each close here; the feed writer mirrors it. A close is never scored as a band trade."
   },
   "assigned": [
     {
@@ -732,11 +749,11 @@
         "source": "WIF",
         "dest": "SOL",
         "amount_usdc": 7.9638,
-        "dest_dist_to_buy_pp": 2.95,
-        "score_pct_per_day": 7.8,
+        "dest_dist_to_buy_pp": 3.1,
+        "score_pct_per_day": 7.75,
         "net_gain_usd": 0.3753,
         "net_return_pct": 4.71,
-        "hold_hours_rw": 14.5
+        "hold_hours_rw": 14.6
       },
       {
         "kind": "prospective",
@@ -744,11 +761,11 @@
         "source": "RAY",
         "dest": "SOL",
         "amount_usdc": 7.9736,
-        "dest_dist_to_buy_pp": 2.95,
-        "score_pct_per_day": 7.8,
-        "net_gain_usd": 0.3758,
+        "dest_dist_to_buy_pp": 3.1,
+        "score_pct_per_day": 7.75,
+        "net_gain_usd": 0.3757,
         "net_return_pct": 4.71,
-        "hold_hours_rw": 14.5
+        "hold_hours_rw": 14.6
       },
       {
         "kind": "open_loan",
@@ -757,10 +774,10 @@
         "dest": "HAPPY",
         "amount_usdc": 6.2406,
         "dest_dist_to_buy_pp": null,
-        "score_pct_per_day": 3.64,
+        "score_pct_per_day": 4.32,
         "net_gain_usd": 0.2236,
         "net_return_pct": 3.58,
-        "hold_hours_rw": 23.6
+        "hold_hours_rw": 19.9
       },
       {
         "kind": "open_loan",
@@ -769,10 +786,10 @@
         "dest": "HAPPY",
         "amount_usdc": 6.2432,
         "dest_dist_to_buy_pp": null,
-        "score_pct_per_day": 3.64,
+        "score_pct_per_day": 4.32,
         "net_gain_usd": 0.2237,
         "net_return_pct": 3.58,
-        "hold_hours_rw": 23.6
+        "hold_hours_rw": 19.9
       },
       {
         "kind": "open_loan",
@@ -781,10 +798,10 @@
         "dest": "HAPPY",
         "amount_usdc": 6.2414,
         "dest_dist_to_buy_pp": null,
-        "score_pct_per_day": 3.64,
+        "score_pct_per_day": 4.32,
         "net_gain_usd": 0.2237,
         "net_return_pct": 3.58,
-        "hold_hours_rw": 23.6
+        "hold_hours_rw": 19.9
       },
       {
         "kind": "prospective",
@@ -793,10 +810,10 @@
         "dest": "WIF",
         "amount_usdc": 7.9638,
         "dest_dist_to_buy_pp": 14.22,
-        "score_pct_per_day": 3.13,
+        "score_pct_per_day": 3.03,
         "net_gain_usd": 0.7735,
         "net_return_pct": 9.71,
-        "hold_hours_rw": 74.4
+        "hold_hours_rw": 76.9
       },
       {
         "kind": "prospective",
@@ -805,10 +822,10 @@
         "dest": "HAPPY",
         "amount_usdc": 7.9638,
         "dest_dist_to_buy_pp": 16.03,
-        "score_pct_per_day": 1.39,
+        "score_pct_per_day": 1.65,
         "net_gain_usd": 0.7735,
         "net_return_pct": 9.71,
-        "hold_hours_rw": 167.6
+        "hold_hours_rw": 141.4
       },
       {
         "kind": "prospective",
@@ -817,10 +834,10 @@
         "dest": "HAPPY",
         "amount_usdc": 7.9736,
         "dest_dist_to_buy_pp": 16.03,
-        "score_pct_per_day": 1.39,
+        "score_pct_per_day": 1.65,
         "net_gain_usd": 0.7744,
         "net_return_pct": 9.71,
-        "hold_hours_rw": 167.6
+        "hold_hours_rw": 141.4
       },
       {
         "kind": "prospective",
@@ -829,10 +846,10 @@
         "dest": "PENGU",
         "amount_usdc": 6.2414,
         "dest_dist_to_buy_pp": 15.52,
-        "score_pct_per_day": 1.26,
-        "net_gain_usd": 0.603,
+        "score_pct_per_day": 1.41,
+        "net_gain_usd": 0.6029,
         "net_return_pct": 9.66,
-        "hold_hours_rw": 184.2
+        "hold_hours_rw": 164.3
       },
       {
         "kind": "prospective",
@@ -841,13 +858,13 @@
         "dest": "PENGU",
         "amount_usdc": 6.2414,
         "dest_dist_to_buy_pp": 15.52,
-        "score_pct_per_day": 1.26,
-        "net_gain_usd": 0.603,
+        "score_pct_per_day": 1.41,
+        "net_gain_usd": 0.6029,
         "net_return_pct": 9.66,
-        "hold_hours_rw": 184.2
+        "hold_hours_rw": 164.3
       }
     ],
-    "turnover_at": "2026-11-27T15:12:04.839Z",
+    "turnover_at": "2026-11-27T15:17:03.467Z",
     "open_paper_loans": [
       {
         "id": "loan-1",
@@ -858,7 +875,7 @@
         "dest_sell_trigger": 0.0002521,
         "at": "2026-11-25T09:47:02.056Z",
         "mark_to_market_usd": 0.3752,
-        "score_pct_per_day": 3.64,
+        "score_pct_per_day": 4.32,
         "net_gain_usd": 0.2236
       },
       {
@@ -870,7 +887,7 @@
         "dest_sell_trigger": 0.0002521,
         "at": "2026-11-25T09:47:02.061Z",
         "mark_to_market_usd": 0.3754,
-        "score_pct_per_day": 3.64,
+        "score_pct_per_day": 4.32,
         "net_gain_usd": 0.2237
       },
       {
@@ -882,17 +899,17 @@
         "dest_sell_trigger": 0.0002521,
         "at": "2026-11-25T09:57:06.725Z",
         "mark_to_market_usd": 0.3753,
-        "score_pct_per_day": 3.64,
+        "score_pct_per_day": 4.32,
         "net_gain_usd": 0.2237
       }
     ],
     "arb_scans": {
-      "total": 252,
+      "total": 253,
       "signals": 0,
-      "last_scan": "2026-11-27T15:03:07.505Z",
-      "best_edge_pct": -0.992
+      "last_scan": "2026-11-27T15:18:01.768Z",
+      "best_edge_pct": -1.0295
     },
-    "runs": 1000,
+    "runs": 1002,
     "note": "PAPER ONLY \u2014 rotation is paper until Alex approves a real move naming source, destination and amount"
   },
   "shadow": [
@@ -906,9 +923,9 @@
       "trailing_armed": false,
       "trades": 1,
       "fees_token": 0.000322579433,
-      "earned_pct": 0.40792170310524006,
-      "last_processed_price": 71.1269,
-      "last_processed_at": "2026-11-27T15:11:42.475Z",
+      "earned_pct": 0.3627224532082278,
+      "last_processed_price": 71.2331,
+      "last_processed_at": "2026-11-27T15:16:41.913Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     },
     {
@@ -921,9 +938,9 @@
       "trailing_armed": true,
       "trades": 8,
       "fees_token": 0.0016011854285385132,
-      "earned_pct": -3.6755017044320577,
-      "last_processed_price": 71.1269,
-      "last_processed_at": "2026-11-27T15:11:42.475Z",
+      "earned_pct": -3.8051613136267566,
+      "last_processed_price": 71.2331,
+      "last_processed_at": "2026-11-27T15:16:41.913Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     },
     {
@@ -936,9 +953,9 @@
       "trailing_armed": false,
       "trades": 0,
       "fees_token": 0,
-      "earned_pct": -3.3000611036036602,
-      "last_processed_price": 0.0002446,
-      "last_processed_at": "2026-11-27T15:13:45.795Z",
+      "earned_pct": -3.1970906547002715,
+      "last_processed_price": 0.0002442,
+      "last_processed_at": "2026-11-27T15:18:39.290Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     },
     {
@@ -951,9 +968,9 @@
       "trailing_armed": false,
       "trades": 1,
       "fees_token": 215.00233006575,
-      "earned_pct": -3.3503471094347805,
-      "last_processed_price": 0.0002446,
-      "last_processed_at": "2026-11-27T15:13:45.795Z",
+      "earned_pct": -3.233602976740413,
+      "last_processed_price": 0.0002442,
+      "last_processed_at": "2026-11-27T15:18:39.290Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     }
   ],
@@ -1030,13 +1047,15 @@
   },
   "notes": [
     "Contract sections: desks, assigned, whale, bundle, cross_pair, shadow, backtest, trades, decisions, nightly_review, market.",
-    "Extension sections (not in the contract's printed schema): wallet, funding_moves, odds, reserve, top_picks.",
+    "Extension sections (not in the contract's printed schema): wallet, funding_moves, odds, reserve, top_picks, float, positions.",
     "assigned entries are SEED-labelled (live=false) \u2014 no live local source; live assigned state is the portal server.",
     "Bundle verdicts are computed here from the whale-state files with the portal's own thresholds; they are concentration only (Stage 1), not cluster detection.",
     "Prices come from the bots' own Jupiter quotes in trades.log; a price older than 15 minutes at generation time is reported unavailable, never as live.",
     "Known data caveat (audit 2026-11-26, unfixed): the HAPPY desk ledger overstates the on-chain stack by 44.764142 HAPPY (the 2026-11-25 buy recorded Jupiter's quote expectedOut instead of the actual received 116203.107076). Figures here are the ledger figures, as the bots hold them.",
     "reference_set_at is DERIVED in this feed from each desk's latest TRADE_EXECUTED (a trade re-references the desk); desks with no trades yet fall back to state.json's value, and the source is named in reference_set_at_source. The bots' state.json files still carry the stale value \u2014 the correction lives in the feed only.",
-    "reserve: $15.00 (0.208505 SOL) earmarked from the 0.5 SOL ops pool (FE7) on 2026-11-27, available to activate new positions when requested; ledger earmark only \u2014 no on-chain transfer, no desk stacks changed. Pool remaining after the earmark: 0.291495 SOL.",
+    "reserve: $15.00 (0.208505 SOL) earmarked from the 0.5 SOL ops pool (FE7) on 2026-11-27, available to activate new positions when requested; ledger earmark only \u2014 no on-chain transfer, no desk stacks changed. Pool remaining after the earmark: 0.291495 SOL. Pool RELEASED for trading 2026-11-27 by Alex's word; the reserve is now drawn from released funds.",
+    "float: USDC float for the request flow (Job 3, 2026-11-27). Ledger allocation inside the app \u2014 all desks share one FE7 USDC account; not a separate on-chain account. Starts at $0 (wallet fully deployed); cap $10 and the 25% sell-proceeds holdback funding rule are PROPOSED \u2014 Alex rules on the numbers. Do NOT seed by converting pool SOL without his explicit word.",
+    "positions: closed positions from the close flow (spec section 2). A close is never scored as a band trade.",
     "whale.top10 carries the top-10 wallet list (address + share) behind each lane's concentration figures, from the same live snapshot; SOL has no list (no live snapshot).",
     "PENGU triggers in state.json read 0.0046203 / 0.0037802; the Lovable prompt seed carries 0.00462027 / 0.00378022 (last-digit rounding). State.json wins here."
   ]

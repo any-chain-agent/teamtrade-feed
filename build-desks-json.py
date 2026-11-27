@@ -66,7 +66,9 @@ WS = os.path.expanduser("~/workspace")
 FEED_DIR = os.path.dirname(os.path.abspath(__file__))
 
 WALLET = "FE7DrfLDUV6868MFK2YEDVMNtj4X7G92bUFsbdS7frnX"
-POOL_SOL = 0.5
+POOL_SOL = 0.5  # historical size of the ops pool — RELEASED for trading
+                # 2026-11-27 by Alex's word; pool_sol below is now 0 (nothing
+                # withheld) and released_pool_sol carries the audit trail.
 
 # Position reserve (2026-11-27): $15 earmarked from the 0.5 SOL ops pool,
 # available to activate new positions when requested. Ledger earmark only
@@ -216,9 +218,13 @@ def build(now):
         "seed": False,
         "wallet": {
             "address": WALLET,
-            "pool_sol": POOL_SOL,
-            "pool_note": "0.5 SOL permanent ops reserve, NEVER traded — "
-                         "not part of any desk stack",
+            "pool_sol": 0,
+            "released_pool_sol": POOL_SOL,
+            "pool_note": "0.5 SOL ops pool RELEASED for trading 2026-11-27 "
+                         "by Alex's word — now assignable funding (new "
+                         "positions + top-ups); $15 / 0.208505 SOL "
+                         "activation reserve earmark intact, remainder "
+                         "0.291495 SOL assignable; no on-chain movement",
         },
     }
 
@@ -363,6 +369,41 @@ def build(now):
     if reserve.get("draws") is None:
         reserve["draws"] = []
     out["reserve"] = reserve
+
+    # ---- USDC float (Job 3, Alex 2026-11-27) -------------------------
+    # Ledger allocation inside the app for the request flow; the record
+    # file is the source of truth, maintained by the allocation flow.
+    # Starts at $0 — the wallet is fully deployed (free USDC ~ $0).
+    try:
+        usdc_float = load_json("sol-usdc-trading/usdc-float.json")
+    except (FileNotFoundError, json.JSONDecodeError):
+        usdc_float = {
+            "balance_usd": 0,
+            "cap_usd": 10,
+            "cap_status": "PROPOSED — Alex rules on the number",
+            "funding_rule": "PROPOSED: hold back 25% of each desk "
+                            "sell's USDC proceeds until the $10 cap, "
+                            "refilling the same way after each allocation.",
+            "queued_requests": [],
+            "allocations": [],
+            "note": "usdc-float.json unreadable — fallback figures",
+        }
+    if usdc_float.get("queued_requests") is None:
+        usdc_float["queued_requests"] = []
+    if usdc_float.get("allocations") is None:
+        usdc_float["allocations"] = []
+    out["float"] = usdc_float
+
+    # ---- positions lifecycle (Job 2 close flow, spec section 2) ------
+    # Record file written by the close executor; the writer never reads
+    # the portal's app.db. A close is never scored as a band trade.
+    try:
+        positions = load_json("sol-usdc-trading/positions.json")
+    except (FileNotFoundError, json.JSONDecodeError):
+        positions = {"closes": []}
+    if positions.get("closes") is None:
+        positions["closes"] = []
+    out["positions"] = positions
 
     # ---- assigned (seed only — no live local source) ----------------
     out["assigned"] = [
@@ -618,7 +659,8 @@ def build(now):
         "Contract sections: desks, assigned, whale, bundle, cross_pair, "
         "shadow, backtest, trades, decisions, nightly_review, market.",
         "Extension sections (not in the contract's printed schema): "
-        "wallet, funding_moves, odds, reserve, top_picks.",
+        "wallet, funding_moves, odds, reserve, top_picks, float, "
+        "positions.",
         "assigned entries are SEED-labelled (live=false) — no live local "
         "source; live assigned state is the portal server.",
         "Bundle verdicts are computed here from the whale-state files with "
@@ -642,7 +684,17 @@ def build(now):
         "pool (FE7) on 2026-11-27, available to activate new positions "
         "when requested; ledger earmark only — no on-chain transfer, no "
         "desk stacks changed. Pool remaining after the earmark: 0.291495 "
-        "SOL.",
+        "SOL. Pool RELEASED for trading 2026-11-27 by Alex's word; the "
+        "reserve is now drawn from released funds.",
+        "float: USDC float for the request flow (Job 3, 2026-11-27). "
+        "Ledger allocation inside the app — all desks share one FE7 "
+        "USDC account; not a separate on-chain account. Starts at $0 "
+        "(wallet fully deployed); cap $10 and the 25% sell-proceeds "
+        "holdback funding rule are PROPOSED — Alex rules on the "
+        "numbers. Do NOT seed by converting pool SOL without his "
+        "explicit word.",
+        "positions: closed positions from the close flow (spec section "
+        "2). A close is never scored as a band trade.",
         "whale.top10 carries the top-10 wallet list (address + share) "
         "behind each lane's concentration figures, from the same live "
         "snapshot; SOL has no list (no live snapshot).",

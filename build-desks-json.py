@@ -30,8 +30,14 @@ portal's app.db directly):
                  Lovable prompt seed, 2026-11-26); live source is the
                  portal server
   top_picks   <- unavailable (portal server only)
-  nightly     <- unavailable (no nightly-review record file on disk)
-  market      <- unavailable (stock-market watch has no data file)
+  nightly_review <- feed/nightly-review.json once the nightly cron has
+                 written it (first file lands 2026-11-27 21:04 MST);
+                 unavailable until then
+  market      <- feed/market.json once the stock-market watch has written
+                 it (next weekday run); unavailable until then
+  reserve     <- sol-usdc-trading/position-reserve.json (the $15 position
+                 reserve earmarked from the 0.5 SOL pool, 2026-11-27);
+                 published verbatim
 
 Rules (contract):
   * Any section whose source is down reports status "unavailable" — never a
@@ -41,6 +47,10 @@ Rules (contract):
     reported in the "wallet" section only, never inside any desk stack.
   * live_price freshness: a price older than 15 minutes at generation time
     becomes null with price_source "unavailable".
+  * reference_set_at is DERIVED per desk from its latest TRADE_EXECUTED
+    in trades.log (a trade re-references the desk); desks with no trades
+    yet fall back to state.json's value. The state files still carry the
+    stale value — the correction lives in the feed only.
   * No keys, credentials, or key material anywhere in this file or script.
 
 Usage: python3 build-desks-json.py [--out PATH]
@@ -57,6 +67,22 @@ FEED_DIR = os.path.dirname(os.path.abspath(__file__))
 
 WALLET = "FE7DrfLDUV6868MFK2YEDVMNtj4X7G92bUFsbdS7frnX"
 POOL_SOL = 0.5
+
+# Position reserve (2026-11-27): $15 earmarked from the 0.5 SOL ops pool,
+# available to activate new positions when requested. Ledger earmark only
+# — no on-chain transfer, no desk stacks changed. The fallback figures
+# below are used ONLY if position-reserve.json cannot be read; the file
+# is the source of truth.
+RESERVE_FALLBACK = {
+    "source": "0.5 SOL ops pool (FE7)",
+    "reserve_sol": 0.208505,
+    "reserve_usd": 15.00,
+    "sol_price_usd": 71.9407,
+    "price_source": "Jupiter lite-api",
+    "pool_sol_before": 0.5,
+    "pool_sol_remaining": 0.291495,
+    "purpose": "available to activate new positions when requested",
+}
 
 # Token identities (immutable; from the Lovable prompt seed — not live data).
 DESKS = [
@@ -226,6 +252,22 @@ def build(now):
             elif p is not None:
                 price_at = at  # kept only as a timestamp, never as live
 
+        # reference_set_at: state.json's value goes stale on re-reference
+        # (every trade resets the reference). Derive from the latest
+        # TRADE_EXECUTED in the desk's log; fall back to state.json for
+        # desks that have never traded. Feed-only correction — the bots'
+        # state files are never touched.
+        ref_set_at = s.get("reference_set_at")
+        ref_set_source = "state.json (desk has no trades yet)"
+        if log_trades:
+            last_trade = log_trades[-1]
+            if last_trade.get("at"):
+                ref_set_at = last_trade["at"]
+                ref_set_source = ("derived from latest TRADE_EXECUTED "
+                                  "(%s, tx %s)"
+                                  % (last_trade.get("side"),
+                                     last_trade.get("tx") or "null"))
+
         desks_out.append({
             "id": d["id"],
             "token": d["token"],
@@ -246,7 +288,8 @@ def build(now):
             "price_at": price_at,
             "price_source": price_source,
             "change_pct_vs_ref": scanner.get("change_pct"),
-            "reference_set_at": s.get("reference_set_at"),
+            "reference_set_at": ref_set_at,
+            "reference_set_at_source": ref_set_source,
         })
 
         if latest_desk:
@@ -304,6 +347,15 @@ def build(now):
     out["trades"] = sorted(trades_out, key=lambda x: x["at"] or "")
     out["funding_moves"] = sorted(funding_out, key=lambda x: x["at"] or "")
 
+    # ---- position reserve (Alex's $15 earmark, 2026-11-27) ------------
+    try:
+        reserve = load_json("sol-usdc-trading/position-reserve.json")
+    except (FileNotFoundError, json.JSONDecodeError):
+        reserve = dict(RESERVE_FALLBACK)
+        reserve["note"] = ("position-reserve.json unreadable — fallback "
+                           "figures from the 2026-11-27 earmark")
+    out["reserve"] = reserve
+
     # ---- assigned (seed only — no live local source) ----------------
     out["assigned"] = [
         dict(a, live=False, seed=True, seed_as_of="2026-11-26",
@@ -323,7 +375,13 @@ def build(now):
             w = None
         if w is None:
             whale_out[lane] = {"status": "unavailable", "top10_pct": None,
-                               "largest_pct": None, "as_of": None}
+                               "largest_pct": None, "as_of": None,
+                               "top10": None,
+                               "top10_note": "wallet list unavailable — "
+                                             "whale state file unreadable",
+                               "thresholds": "FLAGGED top10>=50 or "
+                                             "largest>=20; CAUTION "
+                                             "top10>=30 or largest>=10"}
             bundle_out[lane] = {"verdict": "UNAVAILABLE", "top10_pct": None,
                                 "largest_pct": None, "reason":
                                 "whale state file unreadable"}
@@ -333,6 +391,24 @@ def build(now):
         top10 = m.get("top10_pct")
         largest = lh.get("pct_of_supply") if isinstance(lh, dict) else None
         status = w.get("data_status")
+        # Top-10 wallet list behind the concentration figures — the same
+        # live snapshot the percentages come from. SOL has no list
+        # (no live snapshot); report unavailable, never invent.
+        holders = w.get("top_holders") or []
+        top10_list, top10_note = None, None
+        if status == "live" and len(holders) >= 10:
+            top10_list = [{
+                "rank": h.get("rank"),
+                "address": h.get("address"),
+                "amount": h.get("amount"),
+                "pct_of_supply": h.get("pct_of_supply"),
+            } for h in holders[:10]]
+        elif status == "live":
+            top10_note = ("wallet list unavailable — live snapshot holds "
+                          "fewer than 10 holders")
+        else:
+            top10_note = ("wallet list unavailable — no live holder "
+                          "snapshot for this lane")
         whale_out[lane] = {
             "status": "live" if status == "live" else "no_data",
             "top10_pct": top10,
@@ -341,6 +417,10 @@ def build(now):
             "holders_tracked": m.get("holders_tracked"),
             "as_of": w.get("last_live_snapshot_at"),
             "runs": w.get("runs"),
+            "top10": top10_list,
+            "top10_note": top10_note,
+            "thresholds": "FLAGGED top10>=50 or largest>=20; "
+                          "CAUTION top10>=30 or largest>=10",
         }
         verdict, reason = bundle_verdict(lane, top10, largest, status)
         bundle_out[lane] = {
@@ -490,20 +570,36 @@ def build(now):
                         "portal odds formula stays the fallback.")
     out["odds"] = odds_out
 
-    # ---- unavailable sections (no local live file) --------------------
-    out["nightly"] = {
-        "status": "unavailable",
-        "note": "No nightly-review record file exists on disk. The review "
-                "is delivered in chat by cron trading-nightly-review "
-                "(daily 21:04 MST); last run 2026-11-26 ~21:04 MST. "
-                "The job should write a record file for this feed.",
-    }
-    out["market"] = {
-        "status": "unavailable",
-        "note": "Stock-market watch (cron trading-stock-market-watch) has "
-                "no data file; its reads are logged to the daily memory "
-                "file only (~/memory/2026-11-26.md, first run 2026-11-26).",
-    }
+    # ---- nightly review (record file written by the nightly cron) -----
+    try:
+        nr = load_json("sol-usdc-trading/feed/nightly-review.json")
+        out["nightly_review"] = dict(nr)
+        out["nightly_review"]["status"] = "live"
+    except (FileNotFoundError, json.JSONDecodeError):
+        out["nightly_review"] = {
+            "status": "unavailable",
+            "note": "No nightly-review record file yet — cron "
+                    "trading-nightly-review writes "
+                    "feed/nightly-review.json each run (daily 21:04 MST); "
+                    "first file lands tonight 2026-11-27.",
+        }
+    # Old key kept as a pointer so earlier consumers do not break.
+    out["nightly"] = {"status": out["nightly_review"]["status"],
+                      "note": "see nightly_review"}
+
+    # ---- market (record file written by the stock-market watch) -------
+    try:
+        mk = load_json("sol-usdc-trading/feed/market.json")
+        out["market"] = dict(mk)
+        out["market"]["status"] = "live"
+    except (FileNotFoundError, json.JSONDecodeError):
+        out["market"] = {
+            "status": "unavailable",
+            "note": "No market record file yet — cron "
+                    "trading-stock-market-watch writes feed/market.json "
+                    "each weekday run (~15:07 MST); next run Fri "
+                    "2026-11-27 15:07 MST.",
+        }
     out["top_picks"] = {
         "status": "unavailable",
         "note": "THE SYSTEM'S TOP PICKS live in the portal server only; "
@@ -512,9 +608,9 @@ def build(now):
 
     out["notes"] = [
         "Contract sections: desks, assigned, whale, bundle, cross_pair, "
-        "shadow, backtest, trades, decisions, nightly.",
+        "shadow, backtest, trades, decisions, nightly_review, market.",
         "Extension sections (not in the contract's printed schema): "
-        "wallet, funding_moves, odds, market, top_picks.",
+        "wallet, funding_moves, odds, reserve, top_picks.",
         "assigned entries are SEED-labelled (live=false) — no live local "
         "source; live assigned state is the portal server.",
         "Bundle verdicts are computed here from the whale-state files with "
@@ -528,10 +624,20 @@ def build(now):
         "2026-11-25 buy recorded Jupiter's quote expectedOut instead of "
         "the actual received 116203.107076). Figures here are the ledger "
         "figures, as the bots hold them.",
-        "reference_set_at is stale on re-referenced desks (SOL shows "
-        "2026-11-23 although the reference reset on 2026-11-26 after the "
-        "sell; same for RAY) — carried verbatim, do not trust it for "
-        "when the reference last changed.",
+        "reference_set_at is DERIVED in this feed from each desk's latest "
+        "TRADE_EXECUTED (a trade re-references the desk); desks with no "
+        "trades yet fall back to state.json's value, and the source is "
+        "named in reference_set_at_source. The bots' state.json files "
+        "still carry the stale value — the correction lives in the feed "
+        "only.",
+        "reserve: $15.00 (0.208505 SOL) earmarked from the 0.5 SOL ops "
+        "pool (FE7) on 2026-11-27, available to activate new positions "
+        "when requested; ledger earmark only — no on-chain transfer, no "
+        "desk stacks changed. Pool remaining after the earmark: 0.291495 "
+        "SOL.",
+        "whale.top10 carries the top-10 wallet list (address + share) "
+        "behind each lane's concentration figures, from the same live "
+        "snapshot; SOL has no list (no live snapshot).",
         "PENGU triggers in state.json read 0.0046203 / 0.0037802; the "
         "Lovable prompt seed carries 0.00462027 / 0.00378022 (last-digit "
         "rounding). State.json wins here.",
@@ -558,6 +664,12 @@ def main():
           f"shadow: {len(data['shadow'])}, "
           f"open paper loans: {len(data['cross_pair']['open_paper_loans'])}, "
           f"near-miss: {len(data['cross_pair']['near_miss'])}")
+    print(f"  reserve: ${data['reserve'].get('reserve_usd')} "
+          f"({data['reserve'].get('reserve_sol')} SOL); "
+          f"nightly_review: {data['nightly_review'].get('status')}; "
+          f"market: {data['market'].get('status')}; "
+          f"whale top10 lists: "
+          f"{sum(1 for v in data['whale'].values() if v.get('top10'))}/5")
 
 
 if __name__ == "__main__":

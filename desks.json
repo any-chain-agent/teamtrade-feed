@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T15:20:24.834358Z",
+  "generated_at": "2026-11-27T15:21:41.051687Z",
   "seed": false,
   "wallet": {
     "address": "FE7DrfLDUV6868MFK2YEDVMNtj4X7G92bUFsbdS7frnX",
@@ -63,14 +63,14 @@
       "stack_token": 77.472054,
       "stack_usdc": 15.927667,
       "baseline": 206.592144,
-      "earned_token_equiv": -12.374597,
-      "guard_drawdown_from_peak_pct": -8.188,
+      "earned_token_equiv": -12.160551,
+      "guard_drawdown_from_peak_pct": -8.087,
       "guard_status": "WARNING",
       "halted": false,
-      "live_price": 0.1364307,
-      "price_at": "2026-11-27T15:16:10.647Z",
+      "live_price": 0.136181,
+      "price_at": "2026-11-27T15:21:07.304Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": 2.233,
+      "change_pct_vs_ref": 2.045,
       "reference_set_at": "2026-11-26T08:37:52.000Z",
       "reference_set_at_source": "derived from latest TRADE_EXECUTED (sell, tx 5wYVgiGqNobq6NK9GdDtGfuooueKkNaWY2UmX1ofLM8pvyseTQZoutnjzo6c7Doa8dWPm55LbCrxaZzouP4QGuxL)"
     },
@@ -121,12 +121,6 @@
   ],
   "decisions": [
     {
-      "at": "2026-11-27T15:16:10.647Z",
-      "desk": "wif",
-      "decision": "hold",
-      "reason": "HOLD \u2014 price +2.23% from reference, inside the \u00b110% band (buy <= $0.1201062 / sell >= $0.1467965)"
-    },
-    {
       "at": "2026-11-27T15:16:41.914Z",
       "desk": "sol",
       "decision": "hold",
@@ -149,6 +143,12 @@
       "desk": "happy",
       "decision": "hold",
       "reason": "HOLD \u2014 price +6.55% from reference, inside the \u00b110% band (buy <= $0.0002063 / sell >= $0.0002521)"
+    },
+    {
+      "at": "2026-11-27T15:21:07.304Z",
+      "desk": "wif",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price +2.05% from reference, inside the \u00b110% band (buy <= $0.1201062 / sell >= $0.1467965)"
     }
   ],
   "trades": [
@@ -389,18 +389,18 @@
     },
     "happy": {
       "status": "live",
-      "top10_pct": 32.2341,
-      "largest_pct": 7.7925,
-      "top20_pct": 49.8342,
+      "top10_pct": 32.2417,
+      "largest_pct": 7.8001,
+      "top20_pct": 49.8418,
       "holders_tracked": 20,
-      "as_of": "2026-11-27T14:20:45.104Z",
-      "runs": 56,
+      "as_of": "2026-11-27T15:20:41.639Z",
+      "runs": 57,
       "top10": [
         {
           "rank": 1,
           "address": "Ar7gLbZSxtZzvpTAvQeSCh9gpbYFSDTDpf97MVQ4qGYz",
-          "amount": 75830104.104471,
-          "pct_of_supply": 7.7925
+          "amount": 75904631.414656,
+          "pct_of_supply": 7.8001
         },
         {
           "rank": 2,
@@ -691,10 +691,10 @@
     },
     "happy": {
       "verdict": "CAUTION",
-      "top10_pct": 32.2341,
-      "largest_pct": 7.7925,
-      "reason": "top-10 holds 32.2341% of supply",
-      "checked_at": "2026-11-27T14:20:45.109Z",
+      "top10_pct": 32.2417,
+      "largest_pct": 7.8001,
+      "reason": "top-10 holds 32.2417% of supply",
+      "checked_at": "2026-11-27T15:20:41.644Z",
       "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
     },
     "wif": {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T05:19:17.206012Z",
+  "generated_at": "2026-11-28T05:21:38.872403Z",
   "seed": false,
   "wallet": {
     "address": "FE7DrfLDUV6868MFK2YEDVMNtj4X7G92bUFsbdS7frnX",
@@ -63,14 +63,14 @@
       "stack_token": 77.472054,
       "stack_usdc": 15.927667,
       "baseline": 206.592144,
-      "earned_token_equiv": -14.015032,
-      "guard_drawdown_from_peak_pct": -8.964,
+      "earned_token_equiv": -14.320136,
+      "guard_drawdown_from_peak_pct": -9.108,
       "guard_status": "WARNING",
       "halted": false,
-      "live_price": 0.138375,
-      "price_at": "2026-11-28T05:16:11.701Z",
+      "live_price": 0.1387428,
+      "price_at": "2026-11-28T05:21:09.623Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": 3.69,
+      "change_pct_vs_ref": 3.965,
       "reference_set_at": "2026-11-26T08:37:52.000Z",
       "reference_set_at_source": "derived from latest TRADE_EXECUTED (sell, tx 5wYVgiGqNobq6NK9GdDtGfuooueKkNaWY2UmX1ofLM8pvyseTQZoutnjzo6c7Doa8dWPm55LbCrxaZzouP4QGuxL)"
     },
@@ -110,12 +110,6 @@
   ],
   "decisions": [
     {
-      "at": "2026-11-28T05:16:11.701Z",
-      "desk": "wif",
-      "decision": "hold",
-      "reason": "HOLD \u2014 price +3.69% from reference, inside the \u00b110% band (buy <= $0.1201062 / sell >= $0.1467965)"
-    },
-    {
       "at": "2026-11-28T05:16:46.781Z",
       "desk": "sol",
       "decision": "hold",
@@ -132,6 +126,12 @@
       "desk": "happy",
       "decision": "hold",
       "reason": "HOLD \u2014 price +6.90% from reference, inside the \u00b110% band (buy <= $0.0002063 / sell >= $0.0002521)"
+    },
+    {
+      "at": "2026-11-28T05:21:09.623Z",
+      "desk": "wif",
+      "decision": "hold",
+      "reason": "HOLD \u2014 price +3.97% from reference, inside the \u00b110% band (buy <= $0.1201062 / sell >= $0.1467965)"
     }
   ],
   "trades": [
@@ -391,8 +391,8 @@
       "largest_pct": 7.7788,
       "top20_pct": 49.8205,
       "holders_tracked": 20,
-      "as_of": "2026-11-28T04:20:39.558Z",
-      "runs": 70,
+      "as_of": "2026-11-28T05:20:40.838Z",
+      "runs": 71,
       "top10": [
         {
           "rank": 1,
@@ -692,7 +692,7 @@
       "top10_pct": 32.2204,
       "largest_pct": 7.7788,
       "reason": "top-10 holds 32.2204% of supply",
-      "checked_at": "2026-11-28T04:20:39.558Z",
+      "checked_at": "2026-11-28T05:20:40.838Z",
       "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
     },
     "wif": {
@@ -897,9 +897,9 @@
       "trailing_armed": false,
       "trades": 1,
       "fees_token": 0.000322579433,
-      "earned_pct": 0.35923809650792177,
-      "last_processed_price": 71.2413,
-      "last_processed_at": "2026-11-28T05:11:42.895Z",
+      "earned_pct": 0.3597479522635245,
+      "last_processed_price": 71.2401,
+      "last_processed_at": "2026-11-28T05:16:46.780Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     },
     {
@@ -912,9 +912,9 @@
       "trailing_armed": true,
       "trades": 8,
       "fees_token": 0.0016011854285385132,
-      "earned_pct": -3.815156619502099,
-      "last_processed_price": 71.2413,
-      "last_processed_at": "2026-11-28T05:11:42.895Z",
+      "earned_pct": -3.8136940355395734,
+      "last_processed_price": 71.2401,
+      "last_processed_at": "2026-11-28T05:16:46.780Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     },
     {
@@ -927,9 +927,9 @@
       "trailing_armed": false,
       "trades": 0,
       "fees_token": 0,
-      "earned_pct": -3.453886859857005,
-      "last_processed_price": 0.0002452,
-      "last_processed_at": "2026-11-28T05:13:42.548Z",
+      "earned_pct": -3.4026953224698286,
+      "last_processed_price": 0.000245,
+      "last_processed_at": "2026-11-28T05:18:41.826Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     },
     {
@@ -942,9 +942,9 @@
       "trailing_armed": false,
       "trades": 1,
       "fees_token": 215.00233006575,
-      "earned_pct": -3.5247491314818786,
-      "last_processed_price": 0.0002452,
-      "last_processed_at": "2026-11-28T05:13:42.548Z",
+      "earned_pct": -3.466710036797898,
+      "last_processed_price": 0.000245,
+      "last_processed_at": "2026-11-28T05:18:41.826Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     }
   ],

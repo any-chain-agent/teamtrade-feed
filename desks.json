@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T09:51:36.521988Z",
+  "generated_at": "2026-11-28T09:56:36.556423Z",
   "seed": false,
   "wallet": {
     "address": "FE7DrfLDUV6868MFK2YEDVMNtj4X7G92bUFsbdS7frnX",
@@ -19,14 +19,14 @@
       "stack_token": 1.335476598,
       "stack_usdc": 67.066509,
       "baseline": 1.868587494,
-      "earned_token_equiv": 0.41374494,
-      "guard_drawdown_from_peak_pct": 0,
+      "earned_token_equiv": 0.412633905,
+      "guard_drawdown_from_peak_pct": -0.049,
       "guard_status": "watching",
       "halted": false,
-      "live_price": 70.8307,
-      "price_at": "2026-11-28T09:46:38.178Z",
+      "live_price": 70.914,
+      "price_at": "2026-11-28T09:51:40.415Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": -2.454,
+      "change_pct_vs_ref": -2.339,
       "reference_set_at": "2026-11-27T02:26:45.307Z",
       "reference_set_at_source": "derived from latest TRADE_EXECUTED (sell, tx 5aVMchc8rmtHwYwAF6X3LgYo2v7rwq3a4UtpdMWKtCQ8xSYcM8qbMkQXzJyrbThLUyPnXAs4u7io4VDZDanFAMRc)"
     },
@@ -41,14 +41,14 @@
       "stack_token": 236266.511744,
       "stack_usdc": 26.764171,
       "baseline": 334188.089988,
-      "earned_token_equiv": 11826.1193,
-      "guard_drawdown_from_peak_pct": -3.351,
+      "earned_token_equiv": 11776.638823,
+      "guard_drawdown_from_peak_pct": -3.364,
       "guard_status": "watching",
       "halted": false,
-      "live_price": 0.0002439,
-      "price_at": "2026-11-28T09:48:39.857Z",
+      "live_price": 0.000244,
+      "price_at": "2026-11-28T09:53:40.959Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": 6.414,
+      "change_pct_vs_ref": 6.462,
       "reference_set_at": "2026-11-25T09:43:55.742Z",
       "reference_set_at_source": "derived from latest TRADE_EXECUTED (buy, tx EHNWMzfUPXibnfgQhBVYeycJhFz41Wmusb1QzHgY5W5vpUXvc3MoWpWs8yC81xL5CVC4gFaiwAp7A29V8J5eF3p)"
     },
@@ -63,14 +63,14 @@
       "stack_token": 77.472054,
       "stack_usdc": 15.927667,
       "baseline": 206.592144,
-      "earned_token_equiv": -16.446031,
-      "guard_drawdown_from_peak_pct": -10.113,
+      "earned_token_equiv": -15.922325,
+      "guard_drawdown_from_peak_pct": -9.866,
       "guard_status": "WARNING",
       "halted": false,
-      "live_price": 0.1413606,
-      "price_at": "2026-11-28T09:51:06.491Z",
+      "live_price": 0.1407066,
+      "price_at": "2026-11-28T09:56:06.731Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": 5.927,
+      "change_pct_vs_ref": 5.437,
       "reference_set_at": "2026-11-26T08:37:52.000Z",
       "reference_set_at_source": "derived from latest TRADE_EXECUTED (sell, tx 5wYVgiGqNobq6NK9GdDtGfuooueKkNaWY2UmX1ofLM8pvyseTQZoutnjzo6c7Doa8dWPm55LbCrxaZzouP4QGuxL)"
     },
@@ -85,14 +85,14 @@
       "stack_token": 7.568795,
       "stack_usdc": 15.947102,
       "baseline": 20.183452,
-      "earned_token_equiv": -0.337334,
-      "guard_drawdown_from_peak_pct": -4.308,
+      "earned_token_equiv": -0.345516,
+      "guard_drawdown_from_peak_pct": -4.348,
       "guard_status": "watching",
       "halted": false,
-      "live_price": 1.2989071,
-      "price_at": "2026-11-28T09:47:06.445Z",
+      "live_price": 1.2997733,
+      "price_at": "2026-11-28T09:52:06.527Z",
       "price_source": "jupiter",
-      "change_pct_vs_ref": -5.284,
+      "change_pct_vs_ref": -5.22,
       "reference_set_at": "2026-11-27T09:37:17.938Z",
       "reference_set_at_source": "derived from latest TRADE_EXECUTED (sell, tx 32YHfMUGfpKLxiJn94EUbhGs3pjpcjnbdabCwR52cjpHuxmSuNu1NSzWYsX8icB8G3h2htGK9Wy8maxwhMGFBcdh)"
     }
@@ -110,28 +110,28 @@
   ],
   "decisions": [
     {
-      "at": "2026-11-28T09:46:38.178Z",
+      "at": "2026-11-28T09:51:40.415Z",
       "desk": "sol",
       "decision": "hold",
-      "reason": "HOLD \u2014 price -2.45% from reference, inside the \u00b15% band (buy <= $68.9821 / sell >= $76.2434)"
+      "reason": "HOLD \u2014 price -2.34% from reference, inside the \u00b15% band (buy <= $68.9821 / sell >= $76.2434)"
     },
     {
-      "at": "2026-11-28T09:47:06.445Z",
+      "at": "2026-11-28T09:52:06.527Z",
       "desk": "ray",
       "decision": "hold",
-      "reason": "HOLD \u2014 price -5.28% from reference, inside the \u00b110% band (buy <= $1.2342276 / sell >= $1.5085004)"
+      "reason": "HOLD \u2014 price -5.22% from reference, inside the \u00b110% band (buy <= $1.2342276 / sell >= $1.5085004)"
     },
     {
-      "at": "2026-11-28T09:48:39.857Z",
+      "at": "2026-11-28T09:53:40.959Z",
       "desk": "happy",
       "decision": "hold",
-      "reason": "HOLD \u2014 price +6.41% from reference, inside the \u00b110% band (buy <= $0.0002063 / sell >= $0.0002521)"
+      "reason": "HOLD \u2014 price +6.46% from reference, inside the \u00b110% band (buy <= $0.0002063 / sell >= $0.0002521)"
     },
     {
-      "at": "2026-11-28T09:51:06.491Z",
+      "at": "2026-11-28T09:56:06.731Z",
       "desk": "wif",
       "decision": "hold",
-      "reason": "HOLD \u2014 price +5.93% from reference, inside the \u00b110% band (buy <= $0.1201062 / sell >= $0.1467965)"
+      "reason": "HOLD \u2014 price +5.44% from reference, inside the \u00b110% band (buy <= $0.1201062 / sell >= $0.1467965)"
     }
   ],
   "trades": [
@@ -605,76 +605,15 @@
       "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
     },
     "pengu": {
-      "status": "live",
+      "status": "no_data",
       "top10_pct": 44.8758,
       "largest_pct": 9.1345,
       "top20_pct": 55.0956,
       "holders_tracked": 20,
       "as_of": "2026-11-28T08:54:11.072Z",
-      "runs": 66,
-      "top10": [
-        {
-          "rank": 1,
-          "address": "FJhg2bE1PZEedxpqpXZpJKCfF2m9Z6n9MtLSe2zNo4XY",
-          "amount": 7008229874.237309,
-          "pct_of_supply": 9.1345
-        },
-        {
-          "rank": 2,
-          "address": "6dErg7d5gCLo3APvWLxKNWJQaVoRsBJfEL7t3awCvccx",
-          "amount": 5700000000,
-          "pct_of_supply": 7.4293
-        },
-        {
-          "rank": 3,
-          "address": "9L8T8MhH4jDafq5qSKHshaVfGoySoSDTbsDU2Jc6a16T",
-          "amount": 4917410958.299214,
-          "pct_of_supply": 6.4093
-        },
-        {
-          "rank": 4,
-          "address": "4fh9vfdCCqBWqcCKhYzBSuHzxkiAPCorMshLUuvmiqqT",
-          "amount": 4215063734.228609,
-          "pct_of_supply": 5.4939
-        },
-        {
-          "rank": 5,
-          "address": "93odVNBUZpe765cesNH98w8zz1bMcF1phDkMrWW385T4",
-          "amount": 3923846198.537476,
-          "pct_of_supply": 5.1143
-        },
-        {
-          "rank": 6,
-          "address": "5e2faSYutRBmAk2rEVSPaDBJUYvEosa27azuuyVVHR1t",
-          "amount": 2719701470.262117,
-          "pct_of_supply": 3.5448
-        },
-        {
-          "rank": 7,
-          "address": "2WGHSZKsZYfv66PRZTZjrfeSN5vZZNsggvhCRg1Zcvat",
-          "amount": 2212475459.560067,
-          "pct_of_supply": 2.8837
-        },
-        {
-          "rank": 8,
-          "address": "H1yLwBKqyU5CFF2iaYXNRbMxXzQYD3MrJnPYYsHnR7Gz",
-          "amount": 1400001174.625509,
-          "pct_of_supply": 1.8248
-        },
-        {
-          "rank": 9,
-          "address": "Dn8J9Cf9ooBZPkNUgVxbtmiBoN7HSMLBzVJ2tziYiHna",
-          "amount": 1166670552.167964,
-          "pct_of_supply": 1.5206
-        },
-        {
-          "rank": 10,
-          "address": "9PCgAB58JrE65bv27e9NM3pysX8bKya5z8RNxHBjKF1L",
-          "amount": 1166670552.167964,
-          "pct_of_supply": 1.5206
-        }
-      ],
-      "top10_note": null,
+      "runs": 67,
+      "top10": null,
+      "top10_note": "wallet list unavailable \u2014 no live holder snapshot for this lane",
       "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
     }
   },
@@ -712,11 +651,11 @@
       "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
     },
     "pengu": {
-      "verdict": "CAUTION",
+      "verdict": "UNAVAILABLE",
       "top10_pct": 44.8758,
       "largest_pct": 9.1345,
-      "reason": "top-10 holds 44.8758% of supply",
-      "checked_at": "2026-11-28T08:54:11.072Z",
+      "reason": "holder feed down \u2014 no live top-holder data",
+      "checked_at": "2026-11-28T09:54:06.370Z",
       "thresholds": "FLAGGED top10>=50 or largest>=20; CAUTION top10>=30 or largest>=10"
     }
   },
@@ -783,9 +722,9 @@
         "source": "WIF",
         "dest": "SOL",
         "amount_usdc": 7.9638,
-        "dest_dist_to_buy_pp": 2.55,
+        "dest_dist_to_buy_pp": 2.66,
         "score_pct_per_day": 1.6,
-        "net_gain_usd": 0.3754,
+        "net_gain_usd": 0.3753,
         "net_return_pct": 4.71,
         "hold_hours_rw": 70.9
       },
@@ -795,7 +734,7 @@
         "source": "RAY",
         "dest": "SOL",
         "amount_usdc": 7.9736,
-        "dest_dist_to_buy_pp": 2.55,
+        "dest_dist_to_buy_pp": 2.66,
         "score_pct_per_day": 1.6,
         "net_gain_usd": 0.3758,
         "net_return_pct": 4.71,
@@ -811,7 +750,7 @@
         "score_pct_per_day": 1.31,
         "net_gain_usd": 0.7735,
         "net_return_pct": 9.71,
-        "hold_hours_rw": 178.3
+        "hold_hours_rw": 178.2
       },
       {
         "kind": "prospective",
@@ -823,7 +762,7 @@
         "score_pct_per_day": 1.31,
         "net_gain_usd": 0.7745,
         "net_return_pct": 9.71,
-        "hold_hours_rw": 178.3
+        "hold_hours_rw": 178.2
       },
       {
         "kind": "prospective",
@@ -838,7 +777,7 @@
         "hold_hours_rw": 215.7
       }
     ],
-    "turnover_at": "2026-11-28T09:47:01.925Z",
+    "turnover_at": "2026-11-28T09:52:01.926Z",
     "open_paper_loans": [
       {
         "id": "loan-1",
@@ -883,7 +822,7 @@
       "last_scan": "2026-11-28T09:48:03.416Z",
       "best_edge_pct": -0.9716
     },
-    "runs": 1298,
+    "runs": 1299,
     "note": "PAPER ONLY \u2014 rotation is paper until Alex approves a real move naming source, destination and amount"
   },
   "shadow": [
@@ -897,9 +836,9 @@
       "trailing_armed": false,
       "trades": 1,
       "fees_token": 0.000322579433,
-      "earned_pct": 0.5347020909472399,
-      "last_processed_price": 70.8307,
-      "last_processed_at": "2026-11-28T09:46:38.176Z",
+      "earned_pct": 0.49894073964348534,
+      "last_processed_price": 70.914,
+      "last_processed_at": "2026-11-28T09:51:40.387Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     },
     {
@@ -912,9 +851,9 @@
       "trailing_armed": true,
       "trades": 8,
       "fees_token": 0.0016011854285385132,
-      "earned_pct": -3.3118165641122776,
-      "last_processed_price": 70.8307,
-      "last_processed_at": "2026-11-28T09:46:38.176Z",
+      "earned_pct": -3.4144024000472726,
+      "last_processed_price": 70.914,
+      "last_processed_at": "2026-11-28T09:51:40.387Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     },
     {
@@ -927,9 +866,9 @@
       "trailing_armed": false,
       "trades": 0,
       "fees_token": 0,
-      "earned_pct": -3.119641171914967,
-      "last_processed_price": 0.0002439,
-      "last_processed_at": "2026-11-28T09:48:39.847Z",
+      "earned_pct": -3.145478827237595,
+      "last_processed_price": 0.000244,
+      "last_processed_at": "2026-11-28T09:53:40.957Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     },
     {
@@ -942,9 +881,9 @@
       "trailing_armed": false,
       "trades": 1,
       "fees_token": 215.00233006575,
-      "earned_pct": -3.1457935829610526,
-      "last_processed_price": 0.0002439,
-      "last_processed_at": "2026-11-28T09:48:39.847Z",
+      "earned_pct": -3.175087372525145,
+      "last_processed_price": 0.000244,
+      "last_processed_at": "2026-11-28T09:53:40.957Z",
       "seeded_at": "2026-11-24T19:00:31.552Z"
     }
   ],
